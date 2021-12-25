@@ -51,6 +51,10 @@ module.exports = configure(function (ctx) {
     build: {
       vueRouterMode: "history", // available values: 'hash', 'history'
 
+      env: {
+        API_URL: ctx.dev ? "http://localhost:3000" : "TODO: actual link",
+      },
+
       // transpile: false,
       // publicPath: '/',
 
