@@ -1,6 +1,6 @@
 <template>
   <div class="row justify-center">
-    <div class="q-my-xl col-5">
+    <div class="q-my-xl col-lg-5">
       <q-card v-if="realName" class="my-card">
         <q-item>
           <q-item-section avatar>
