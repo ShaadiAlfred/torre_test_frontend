@@ -52,7 +52,9 @@ module.exports = configure(function (ctx) {
       vueRouterMode: "history", // available values: 'hash', 'history'
 
       env: {
-        API_URL: ctx.dev ? "http://localhost:3000" : "TODO: actual link",
+        API_URL: ctx.dev
+          ? "http://localhost:3000"
+          : "https://torres-test-backend.herokuapp.com",
       },
 
       // transpile: false,
