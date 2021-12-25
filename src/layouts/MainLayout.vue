@@ -2,7 +2,9 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated class="bg-secondary">
       <q-toolbar>
-        <q-toolbar-title class="dimmed-text"> Torre </q-toolbar-title>
+        <q-toolbar-title class="brand-title dimmed-text" @click="goToHomePage">
+          Torre
+        </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
@@ -17,5 +19,10 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "MainLayout",
+  methods: {
+    async goToHomePage() {
+      await this.$router.push("/");
+    },
+  },
 });
 </script>
