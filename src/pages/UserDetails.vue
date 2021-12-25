@@ -1,7 +1,7 @@
 <template>
   <div class="row justify-center">
     <div class="q-my-xl col-5">
-      <q-card class="my-card">
+      <q-card v-if="realName" class="my-card">
         <q-item>
           <q-item-section avatar>
             <q-avatar style="height: 3em; width: 3em">
@@ -10,10 +10,8 @@
           </q-item-section>
 
           <q-item-section>
-            <q-item-label>
-              <h4 style="margin-bottom: 0px; padding-bottom: 0px">
-                {{ realName }}
-              </h4>
+            <q-item-label class="text-h4 text-primary">
+              {{ realName }}
             </q-item-label>
             <q-item-label caption>
               <a :href="`https://torre.co/${username}`" target="_blank">
@@ -23,11 +21,18 @@
           </q-item-section>
         </q-item>
 
-        <ul>
-          <li v-for="skill in skills" :key="skill.id">
-            {{ skill.name }}: {{ skill.proficiency }}
-          </li>
-        </ul>
+        <q-list bordered separator>
+          <q-item clickable v-ripple v-for="skill in skills" :key="skill.id">
+            <q-item-section>
+              <q-item-label class="text-h6">
+                {{ skill.name }}
+              </q-item-label>
+              <q-item-label style="text-indent: 2rem">{{
+                skill.proficiency.toUpperCase()
+              }}</q-item-label>
+            </q-item-section>
+          </q-item>
+        </q-list>
       </q-card>
     </div>
   </div>
