@@ -37,6 +37,7 @@
 import { Skill } from "../types/UserDetails";
 import { defineComponent } from "vue";
 import { getUserDetails } from "../services";
+import { useQuasar } from "quasar";
 
 export default defineComponent({
   name: "UserDetails",
@@ -49,6 +50,12 @@ export default defineComponent({
     };
   },
   async mounted() {
+    const $q = useQuasar();
+
+    $q.loading.show({
+      delay: 400,
+    });
+
     const userInfo = await getUserDetails(
       this.$route.params.username as string,
     );
@@ -58,9 +65,11 @@ export default defineComponent({
       this.realName = userInfo.person.name;
       this.pictureUrl = userInfo.person.picture;
       this.skills = userInfo.strengths;
+      $q.loading.hide();
       return;
     }
 
+    $q.loading.hide();
     await this.$router.push({ name: "not_found" });
   },
 });
