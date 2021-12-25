@@ -6,7 +6,7 @@
   </div>
 
   <div class="row justify-center">
-    <div class="col-5 q-mx-auto">
+    <div class="col-lg-5 q-mx-auto">
       <q-form
         @submit.prevent="search"
         autocorrect="off"
