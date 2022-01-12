@@ -12,6 +12,6 @@ export interface UserInfo {
       code: number;
       name: string;
       proficiency: string;
-    },
+    }
   ];
 }

@@ -22,7 +22,7 @@ export default defineComponent({
   methods: {
     async goToHomePage() {
       await this.$router.push("/");
-    },
-  },
+    }
+  }
 });
 </script>

@@ -31,12 +31,12 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "PageIndex",
   data: () => ({
-    username: "",
+    username: ""
   }),
   methods: {
     async search() {
       await this.$router.push({ path: this.username });
-    },
-  },
+    }
+  }
 });
 </script>

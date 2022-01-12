@@ -51,18 +51,18 @@ export default defineComponent({
       username: "",
       realName: "",
       skills: [] as Skill[],
-      pictureUrl: "",
+      pictureUrl: ""
     };
   },
   async mounted() {
     const $q = useQuasar();
 
     $q.loading.show({
-      delay: 400,
+      delay: 400
     });
 
     const userInfo = await getUserDetails(
-      this.$route.params.username as string,
+      this.$route.params.username as string
     );
 
     if (userInfo !== null) {
@@ -76,6 +76,6 @@ export default defineComponent({
 
     $q.loading.hide();
     await this.$router.push({ name: "not_found" });
-  },
+  }
 });
 </script>

@@ -1,7 +1,7 @@
 import { UserInfo } from "../types/UserInfo";
 
 export const getUserDetails = async (
-  username: string,
+  username: string
 ): Promise<UserInfo | null> => {
   const url = (process.env.API_URL ?? "") + "/api/" + username + "/skills";
 
