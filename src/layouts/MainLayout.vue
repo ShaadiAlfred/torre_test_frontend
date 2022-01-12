@@ -2,9 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated class="bg-secondary">
       <q-toolbar>
-        <q-toolbar-title class="brand-title dimmed-text" @click="goToHomePage">
-          Torre
-        </q-toolbar-title>
+        <q-toolbar-title @click="goToHomePage"> Torre </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
@@ -26,3 +24,13 @@ export default defineComponent({
   }
 });
 </script>
+
+<style lang="scss" scoped>
+.q-toolbar__title {
+  color: hsla(0, 0%, 100%, 0.9);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+</style>
